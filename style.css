@@ -34,7 +34,6 @@ header img {
   display: inline-block;
 }
 
-
 .header-buttons a:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -170,6 +169,7 @@ section h2 {
     height: 250px;
   }
 }
+
 .rodape {
   background-color: #565656;
   color: #fff;
@@ -181,7 +181,21 @@ section h2 {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-@media (max-width: 600px) {
+
+/* Estilos específicos para dispositivos móveis */
+@media (max-width: 768px) {
+  .carousel-container {
+    max-width: 100%;
+  }
+
+  .carousel img {
+    cursor: grab;
+  }
+
+  .carousel img.active {
+    display: block;
+  }
+
   .header-buttons {
     width: 100%;
     display: flex;
@@ -210,8 +224,19 @@ section h2 {
     height: 120px;
   }
 
-  .carousel-container {
-    max-width: 95%;
+  .carousel {
+    display: block;
   }
 }
 
+/* Estilos específicos para desktops */
+@media (min-width: 769px) {
+  .carousel-container {
+    max-width: 80%;
+    margin: 30px auto;
+  }
+
+  .carousel img {
+    cursor: pointer;
+  }
+}
